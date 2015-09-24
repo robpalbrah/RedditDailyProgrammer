@@ -5,9 +5,17 @@ lines_number = input("Number of lines: ")
 
 lines = []
 for i in range(int(lines_number)):
-    input_lines = input('> ')
+    input_lines = input('> ').lower()
+    input_lines = input_lines.translate({ord(i): None for i in ' $&?.,#!;:-'})
     lines.append(input_lines.rstrip())
     
-print(lines)
+lines = ''.join(lines)
+lines_reversed = lines[::-1] 
+
+if lines == lines_reversed:
+    print('Palindrome')
+else:
+    print('Not a palindrome')
+
     
 
