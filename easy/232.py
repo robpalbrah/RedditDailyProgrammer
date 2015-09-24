@@ -22,6 +22,3 @@ if lines == lines_reversed:
     print('Palindrome')
 else:
     print('Not a palindrome')
-
-    
-
