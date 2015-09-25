@@ -1,11 +1,12 @@
 # Reddit Daily Programming [2015-09-14] Challenge #232 [Easy] Palindromes
 # https://www.reddit.com/r/dailyprogrammer/comments/3kx6oh/20150914_challenge_232_easy_palindromes/
 
+# Find if given string is a palindrome. 
 file = open(r'C:\code\rDP\DemetriMartin.txt', 'r')
 
 lines = []
 for file_line in file.readlines():
-    
+    # Creating a table for str.translate to remove punctuation and whitespaces
     table_string = u'\u2026\u201C\u201D\u2019 "$&?.,#!;:-()\'\"'
     tr_table = {ord(i): None for i in table_string} 
     
