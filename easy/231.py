@@ -21,7 +21,7 @@ input_string = random_string
 number_of_lines = 100
 
 work_list = [a for a in input_string] 
-work_file = open(r'c:\code\GitHub\rDP\Easy\231_output.txt', 'w')
+work_file = open(r'c:\code\rDP\231_output.txt', 'w')
 
 write_in_file(work_list, work_file)
 
