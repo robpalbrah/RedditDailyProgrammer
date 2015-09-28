@@ -4,6 +4,8 @@
 
 # Rule 90 is a Cellular Automata rule based on the XOR function. 
 
+import random
+
 def write_in_file(nextline, work_file):
     """Takes a list, makes it a string and writes it into a file, 
     substituting 1 for 'X' and 0 for whitespace."""
@@ -12,8 +14,11 @@ def write_in_file(nextline, work_file):
     translate_table = {ord('1'): 'X', ord('0'): ' '}
     work_file.write(nextline_string.translate(translate_table) + '\n')
 
-input_string = '00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000'
-number_of_lines = 25
+# Random string to see what pattern will emerge     
+random_list = [str(random.choice((0, 1))) for i in range(99)]    
+random_string = ''.join(random_list)   
+input_string = random_string
+number_of_lines = 100
 
 work_list = [a for a in input_string] 
 work_file = open(r'c:\code\GitHub\rDP\Easy\231_output.txt', 'w')
