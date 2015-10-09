@@ -28,7 +28,6 @@ def faro_shuffle(input_list):
         
     return faro_list
     
-
 def fisher_yates_shuffle(input_list):
     """
     Fisher - Yates algorithm for generating a random permutation. 
