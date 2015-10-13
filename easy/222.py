@@ -28,6 +28,7 @@ def balance(word):
             value_list.append(value)
         
         weight = sum(value_list[ : bal_point])
+        
         if weight == sum(value_list[bal_point + 1 : ]):
             print('%s %s %s - %d' % (word[ : bal_point], word[bal_point],
                                      word[bal_point + 1 : ], weight))
