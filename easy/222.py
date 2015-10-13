@@ -30,7 +30,7 @@ def balance(word):
         weight = sum(value_list[ : bal_point])
         if weight == sum(value_list[bal_point + 1 : ]):
             print('%s %s %s - %d' % (word[ : bal_point], word[bal_point],
-                                     word[bal_point : ], weight))
+                                     word[bal_point + 1 : ], weight))
             break
     
     else:
@@ -41,7 +41,9 @@ challange_list = [
 'CONSUBSTANTIATION',
 'WRONGHEADED',
 'UNINTELLIGIBILITY',
-'SUPERGLUE']
+'SUPERGLUE',
+'ABA',
+'BABE']
 
 for challange in challange_list:
     balance(challange)
