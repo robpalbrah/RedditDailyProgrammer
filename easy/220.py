@@ -50,5 +50,5 @@ def mangle_word(word):
     
     return mangled_word
   
-print(mangle_word("#deSanta'S123!"))  
+print(mangle_word("#cat!"))  
             
