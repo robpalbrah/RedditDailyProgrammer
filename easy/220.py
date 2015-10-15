@@ -1,43 +1,41 @@
 # [2015-06-22] Challenge #220 [Easy] Mangling sentences
 # https://tinyurl.com/rDP-220-Easy
+import string
+
 
 def mangle_word(word):
-    
+    """Takes a single word and arranges it's letters in alphabetical order.
+    Leaves numbers and punctuation in place. Capital letters retain their 
+    positions. Returns mangles word."""
+    if not len(word):
+        return word 
+        
     # Searching for capital letters
     capital_letters = [] 
     for (index, letter) in enumerate(word):
-        if ord(letter) in range(65, 91):
-            # ord('A') = 65, ord('Z') = 90
+        if letter.isupper():
             capital_letters.append(index)
-            print('Capital_index: ', index) #print_test
     
     # Searching for punctuation and numbers 
-    punctuation_marks = "\",.;:[]{}()!@#$%^&*\/-+|'?<>`~_="
     fixed_points = []
     for (index, letter) in enumerate(word):
-        if letter in punctuation_marks:
-            print('Punctuation: ', letter) #print_test
+        if letter in string.punctuation:
             fixed_points.append(index)
-        if letter in [str(number) for number in range(10)]:
-            print('Number: ', letter) #print_test
+        if letter.isdigit():
             fixed_points.append(index)
-    print('fixed points', fixed_points) #print_test
     
     word = word.lower()
-    print('word: ', word) #print_test
-    sorting_list = [ord(letter) for letter in word]
+    sorting_list = [letter for letter in word]
 
     # Removing punctuation and numbers 
     if fixed_points:
         for point_index in reversed(fixed_points):
-            print('Deleting: ', chr(sorting_list[point_index])) #print_test
             del sorting_list[point_index]
-    print([chr(a) for a in sorting_list]) #print_test
      
     sorting_list.sort()
-    sorting_list = [chr(letter) for letter in sorting_list]
+    sorting_list = [letter for letter in sorting_list]
     
-    # Adding back punctuation and numbers    
+    # Adding back punctuation, numbers and capital letters     
     if fixed_points:
         for point_index in fixed_points: 
             sorting_list.insert(point_index, word[point_index])
@@ -50,5 +48,28 @@ def mangle_word(word):
     
     return mangled_word
   
-print(mangle_word("#cat!"))  
+def mangle_sentence(sentence):
+    """Takes a str and puts letters in words in alphabetical
+    order. Returns mangled sentence"""
+    if ' ' in sentence:
+        sentence = sentence.split()
+        sentence = [mangle_word(word) for word in sentence]
+        mangled_sentence = ' '.join(sentence)
+    else: 
+        mangled_sentence = mangle_word(sentence)
+        
+    return mangled_sentence
             
+
+challange_inputs = {
+'input1' : "Eye of Newt, and Toe of Frog, Wool of Bat, and Tongue of Dog.",
+'input2' : """Adder's fork, and Blind-worm's sting, Lizard's leg, and 
+              Howlet's wing.""",
+'input3' : """For a charm of powerful trouble, like a hell-broth boil 
+              and bubble."""
+}
+              
+if __name__ == '__main__':
+    
+    for key in challange_inputs:
+        print('%s:\n' % key, mangle_sentence(challange_inputs[key]))
