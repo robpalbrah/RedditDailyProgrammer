@@ -17,12 +17,14 @@ class ToDoList():
 
         while True:
             try:
-                list_of_commands = input('>')
+                commands = input('>')
             except EOFError:
                 pass
 
-            if ';' in list_of_commands:
-                list_of_commands = list_of_commands.split(';')
+            if ';' in commands:
+                list_of_commands = commands.split(';')
+            else:
+                list_of_commands = [commands]
 
             for command in list_of_commands:
                 if len(command) == 0 or command.isspace():
@@ -47,7 +49,8 @@ class ToDoList():
         elif 'view' in command:
             self.view_list()
 
-        # elif 'help' in command:
+        elif 'help' in command:
+            self.help()
 
         else:
             print('ERROR: Unknown command.')
@@ -74,30 +77,28 @@ class ToDoList():
     def view_list(self):
         """Shows all items in the list."""
         if self.to_do_list:
-            print('\tTo-do list:')
-            for index, item in enumerate(self.to_do_list):
+            print('To-do list:')
+            for index, item in enumerate(self.to_do_list, start=1):
                 print(index, item)
         else:
             print('To-do list is empty.')
 
-
-    def retrieve_item(self, command):
+    @classmethod
+    def retrieve_item(cls, command):
         """Retrieves item in parenthesis from a given command"""
         item = command[command.find('(') + 2 : -2]
         return item
 
 
-    def help(self, *args):
+    def help(self):
         """Provides help for the user."""
-        if 'add' in args:
-            self.add_item.__name__
-            self.add_item.__doc__
-        elif 'delete' in args:
-            self.deleteItem.__name__
-            self.deleteItem.__doc__
-        elif 'view' in args:
-            self.view_list.__name__
-            self.view_list.__doc__
+        print('addItem():')
+        print('\t', self.add_item.__doc__)
+        print('deleteItem():')
+        print('\t', self.delete_item.__doc__)
+        print('viewList():')
+        print('\t', self.view_list.__doc__)
+        return None
 
 
 if __name__ == '__main__':
