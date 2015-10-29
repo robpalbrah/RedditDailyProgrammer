@@ -13,14 +13,10 @@ class ToDoCategory(dp_219_easy.ToDoList):
     def __init__(self):
         self.category = {}
     
-    def add_item(self, input_list):
+    def add_item(self, work_list):
         """Adds item to the given category."""
-        item = input_list[0]
-        # Checks if any non-default categories present  
-        if len(input_list) > 1:
-            cats_list = [cat for cat in input_list[1:]]
-        else:
-            cats_list = ['default']
+        item = work_list[0]
+        cats_list = check_categories(work_list)        
         
         for cat in cats_list:
             
@@ -46,14 +42,26 @@ class ToDoCategory(dp_219_easy.ToDoList):
             
             # Removing leading and trailing spaces
             for index in range(len(work_list)):
-                work_list[index].lstrip().rstrip()
+                work_list[index] = work_list[index].lstrip().rstrip()
+                work_list[index] = work_list[index].replace('"', '')
         
         else:
-            work_list = [command]
+            work_list = [command.replace('"', '')]
             
         return work_list
 
-            
+    def delete_item(work_list):
+        """Deletes item from a category."""
+        
+    def check_categories(work_list):
+        """Checks if any non-default categories present"""
+        if len(work_list) > 1:
+            cats_list = [cat for cat in work_list[1:]]
+        else:
+            cats_list = ['default']
+        return cats_list    
+
+        
 class ToDoCategoryTestCase(unittest.TestCase):
     """Tests for ToDoCategory class methods."""
     
@@ -93,6 +101,35 @@ class ToDoCategoryTestCase(unittest.TestCase):
         # Item and multiple categories 
         self.assertEqual(unit.retrieve_item('addItem("item","cat1", "cat2")'),
                                             ["item", "cat1", "cat2"])
-                                            
+        
+    def test_delete_item(self):
+        """Tests for delete_item method."""
+        unit = ToDoCategory()
+        
+        # Delete item from default category
+        unit.add_item(['item'])
+        unit.delete_item(['item'])
+        self.assertTrue(unit.categories == {})
+        
+        # Delete item from specific categories
+        unit.add_item(['item1', 'cat1', 'cat2', 'cat3', 'cat4'])
+        unit.delete(['item1', 'cat1', 'cat3'])
+        self.assertTrue(unit.categories == 
+                        {'cat2': ['item1'], 'cat4': ['item1']})
+
+        # Delete item from all categories                         
+        unit.add_item(['item2', 'cat3', 'cat2'])
+        unit.delete_item(['item1', 'cat4'])
+        self.assertTrue(unit.categories ==
+                        {'cat2': ['item1', 'item2'], 'cat3': ['item2']})
+                        
+        unit.delete_item(['item2'])
+        self.assertTrue(unit.categories == {'cat2': ['item1']})
+        
+        # Trying to delete item that is not in the list 
+        unit.delete_item(['item3'])
+        self.assertRaises(ValueError, unit.delete_item(), ['item3']) 
+        
+        
 if __name__ == '__main__':
     unittest.main()
