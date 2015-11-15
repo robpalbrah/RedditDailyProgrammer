@@ -15,7 +15,7 @@ for three_tuple in os.walk('.'):
             challanges.append(filename)
 
 class Challange():
-    def __init__(self, file)
+    def __init__(self, file):
         self.file = file
         
     def get_number(self):
