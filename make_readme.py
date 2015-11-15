@@ -4,7 +4,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 import os
 import re
 import importlib
-import rDP # Reddit Daily Programming repository
+import rDP # Reddit Daily Programmer repository
 
 # Collecting challenge files in one list 
 rule = re.compile(r'dp_\d{1,3}_(easy|int|hard).py')
@@ -44,12 +44,16 @@ class Challange():
         #self.url = 
         pass
 
-def make_readme(file_name):
-    """Opens README.mk, creates and fills table with challenges."""
-    file = open(file_name, 'w')
-    # Deleting all previous records
-    file.seek(0)
-    file.trunkate()
+class ReadmeFile():
+    def __init__(self, file):
+        self.file = file
+    
+    def create(self):
+        """Opens README.mk, creates and fills table with challenges."""
+        work_file = open(self.file, 'w')
+        # Deleting all previous records
+        file.seek(0)
+        file.trunkate()
     
 # Create directory tree for the easy / intermediate / hard directories
 # Store directory tree 
