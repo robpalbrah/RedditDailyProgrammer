@@ -1,5 +1,8 @@
-# [2015-07-06] Challenge #222 [Easy] Balancing Words
-# https://www.reddit.com/r/dailyprogrammer/comments/3c9a9h/20150706_challenge_222_easy_balancing_words/
+"""
+[2015-07-06] Challenge #222 [Easy] Balancing Words
+https://tinyurl.com/dp-222-easy
+"""
+# Status: Done
 
 def balance(word):
     """
@@ -38,7 +41,7 @@ def balance(word):
         print("%s DOES NOT BALANCE" % word)
 
         
-challange_list = [
+challenge_list = [
 'CONSUBSTANTIATION',
 'WRONGHEADED',
 'UNINTELLIGIBILITY',
@@ -46,6 +49,6 @@ challange_list = [
 'ABA',
 'BABE']
 
-for challange in challange_list:
-    balance(challange)
+for challenge in challenge_list:
+    balance(challenge)
     

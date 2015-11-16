@@ -2,6 +2,7 @@
 [2015-06-08] Challenge #218 [Easy] Making numbers palindromic
 https://tinyurl.com/dp-218-easy
 """
+# Status: Done
     
 def calculate_palindrome(number, STEPS = 10000):
     """Calculates palindromic number. Returns (palindrome, counter).

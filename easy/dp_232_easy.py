@@ -1,5 +1,8 @@
-# Reddit Daily Programming [2015-09-14] Challenge #232 [Easy] Palindromes
-# https://www.reddit.com/r/dailyprogrammer/comments/3kx6oh/20150914_challenge_232_easy_palindromes/
+"""
+[2015-09-14] Challenge #232 [Easy] Palindromes
+https://tinyurl.com/dp-232-easy
+"""
+# Status: Done
 
 # Find if given string is a palindrome. 
 file = open(r'C:\code\rDP\DemetriMartin.txt', 'r')

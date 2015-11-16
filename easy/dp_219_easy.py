@@ -2,6 +2,7 @@
 [2015-06-15] Challenge #218 [Easy] To-do list (Part 1)
 https://tinyurl.com/rDP-219-Easy
 """
+# Status: Done
 
 class ToDoList():
     """Creates a To-do list."""

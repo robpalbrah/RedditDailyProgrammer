@@ -1,7 +1,9 @@
-# [2015-07-13] Challenge #223 [Easy] Garland words
-# https://www.reddit.com/r/dailyprogrammer/comments/3d4fwj/20150713_challenge_223_easy_garland_words/
+"""
+[2015-07-13] Challenge #223 [Easy] Garland words
+https://tinyurl.com/dp-223-easy
+"""
+# Status: Done 
 
-# Add optional challenges. 
 def garland(word):
     """
     Takes a word and determines it's garland number. 

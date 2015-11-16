@@ -1,8 +1,10 @@
-# [2015-09-07] Challenge #213 [Easy] Cellular Automata: Rule 90 
-# https://www.reddit.com/r/dailyprogrammer/comments/3jz8tt/20150907_challenge_213_easy_cellular_automata/
-# Error in the title, 213 instead of 231
-
-# Rule 90 is a Cellular Automata rule based on the XOR function. 
+"""
+[2015-09-07] Challenge #231 [Easy] Cellular Automata: Rule 90 
+https://tinyurl.com/dp-231-easy
+Error in the title, 213 instead of 231
+Rule 90 is a Cellular Automata rule based on the XOR function. 
+"""
+# Status: Done
 
 import random
 

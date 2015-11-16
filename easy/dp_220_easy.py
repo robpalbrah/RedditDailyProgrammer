@@ -1,5 +1,9 @@
-# [2015-06-22] Challenge #220 [Easy] Mangling sentences
-# https://tinyurl.com/rDP-220-Easy
+"""
+[2015-06-22] Challenge #220 [Easy] Mangling sentences
+https://tinyurl.com/rDP-220-Easy
+"""
+# Status: Done
+
 import string
 
 
