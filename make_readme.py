@@ -22,8 +22,8 @@ class Challenge():
         """Retrieve status (done/unfinished) from the challenge file.
         Unfinished unless explicitly stated otherwise."""
         self.work_file.seek(0)
-        for line in self.work_file.readline().lower():
-            if 'status: done' in line:
+        for line in self.work_file:
+            if 'done' in line.lower():
                 self.status = 'done'
                 break
             else:
@@ -123,22 +123,33 @@ def fill_table(challenges_table):
 
     return challenges_table
     
-def create_readme():
+def create_readme(challenges_table):
     """Opens README.mk, creates and fills table with challenges."""
-    with open('README.mk', 'w') as work_file
+    with open('README.mk', 'w') as work_file:
         # Deleting all previous records
         work_file.seek(0)
-        work_file.trunkate()
+        work_file.truncate()
     
-        readme_header = """# Reddit Daily Programmer
-        Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) challenges.
-        """
-        table_header = """Number| Easy | Intermediate | Hard 
-        --- | --- | --- | ---
-        """
-        for number in sorted(challenges_table, reverced = True):
+        readme_header = (
+        "# Reddit Daily Programmer\n",
+        "Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) challenges.\n"
+        )
+        
+        table_header = (
+        "\nNumber| Easy | Intermediate | Hard\n",
+        "--- | --- | --- | ---\n"
+        )
+                
+        work_file.writelines(readme_header)
+        work_file.writelines(table_header)
+        
+        for number in sorted(challenges_table, reverse = True):
+            table_row = "%s | %s | %s | %s\n" % (number, 
+                                            challenges_table[number][0],
+                                            challenges_table[number][1],
+                                            challenges_table[number][2])
+            work_file.write(table_row)
             
- 
 # Create directory tree for the easy / intermediate / hard directories
 # Store directory tree 
 # Retrieve and store (or pass) information about the files (challenge
@@ -152,5 +163,4 @@ def create_readme():
 a = collect_files()
 b = create_table(a)
 c = fill_table(b)
-for key in sorted(c.keys(), reverse = True):
-    print(key, c[key])
+create_readme(c)
