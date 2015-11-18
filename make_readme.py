@@ -124,8 +124,8 @@ def fill_table(challenges_table):
     return challenges_table
     
 def create_readme(challenges_table):
-    """Opens README.mk, creates and fills table with challenges."""
-    with open('README.mk', 'w') as work_file:
+    """Opens README.md, creates and fills table with challenges."""
+    with open('README.md', 'w') as work_file:
         # Deleting all previous records
         work_file.seek(0)
         work_file.truncate()
@@ -154,7 +154,7 @@ def create_readme(challenges_table):
 # Store directory tree 
 # Retrieve and store (or pass) information about the files (challenge
 # number, description, status (done / unfinished)
-# Initiate a table in README.mk 
+# Initiate a table in README.md 
 # Pass files into respective table cells, create url links 
 # Add how many unfinished challenges there is
 # All can be remade to factor in files in arbitrary folders inside 
