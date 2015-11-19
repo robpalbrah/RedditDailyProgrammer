@@ -18,3 +18,4 @@ Number| Easy | Intermediate | Hard
 220 | [done](https://tinyurl.com/rDP-220-Easy "Mangling sentences") | --- | ---
 219 | [done](https://tinyurl.com/rDP-219-Easy "To-do list (Part 1)") | [unfinished](https://tinyurl.com/dp-219-int "To-do list (Part 2)") | ---
 218 | [done](https://tinyurl.com/dp-218-easy "Making numbers palindromic") | --- | ---
+217 | [done](https://tinyurl.com/dp-217-easy "Lumberjack Pile Problem") | --- | ---
