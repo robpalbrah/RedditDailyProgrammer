@@ -7,7 +7,7 @@ Number| Easy | Intermediate | Hard
 231 | [done](https://tinyurl.com/dp-231-easy "Cellular Automata: Rule 90") | --- | ---
 230 | [unfinished](https://tinyurl.com/dp-230-easy "JSON treasure hunt") | --- | ---
 229 | [done](https://tinyurl.com/dp-229-easy "The Dottie Number") | --- | ---
-228 | [done](https://tinyurl.com/dp-228-easy "Letters in Alphabetical Order") | --- | ---
+228 | [done](https://tinyurl.com/dp-228-easy "Letters in Alphabetical Order") | [unfinished](https://tinyurl.com/dp-228-int "Use a Web Service to Find Bitcoin Prices") | ---
 227 | --- | --- | ---
 226 | --- | --- | ---
 225 | --- | --- | ---
@@ -16,6 +16,6 @@ Number| Easy | Intermediate | Hard
 222 | [done](https://tinyurl.com/dp-222-easy "Balancing Words") | --- | ---
 221 | [unfinished](https://tinyurl.com/dp-221-easy "Word snake") | --- | ---
 220 | [done](https://tinyurl.com/rDP-220-Easy "Mangling sentences") | --- | ---
-219 | [done](https://tinyurl.com/rDP-219-Easy "To-do list (Part 1)") | [unfinished](https://tinyurl.com/dp-219-int "To-do list (Part 2)") | ---
+219 | [done](https://tinyurl.com/rDP-219-Easy "To-do list (Part 1)") | [done](https://tinyurl.com/dp-219-int "To-do list (Part 2)") | ---
 218 | [done](https://tinyurl.com/dp-218-easy "Making numbers palindromic") | --- | ---
 217 | [done](https://tinyurl.com/dp-217-easy "Lumberjack Pile Problem") | --- | ---
