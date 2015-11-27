@@ -3,6 +3,14 @@ Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) cha
 
 Number| Easy | Intermediate | Hard
 --- | --- | --- | ---
+240 | [done](https://tinyurl.com/dp-240-easy "Typoglycemia") | --- | ---
+239 | --- | --- | ---
+238 | --- | --- | ---
+237 | --- | --- | ---
+236 | --- | --- | ---
+235 | --- | --- | ---
+234 | --- | --- | ---
+233 | --- | --- | ---
 232 | [done](https://tinyurl.com/dp-232-easy "Palindromes") | --- | ---
 231 | [done](https://tinyurl.com/dp-231-easy "Cellular Automata: Rule 90") | --- | ---
 230 | [unfinished](https://tinyurl.com/dp-230-easy "JSON treasure hunt") | --- | ---
