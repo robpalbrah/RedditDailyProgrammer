@@ -160,7 +160,8 @@ def create_readme(challenges_table):
 # All can be remade to factor in files in arbitrary folders inside 
 # rDP repository
 
-a = collect_files()
-b = create_table(a)
-c = fill_table(b)
-create_readme(c)
+if __name__ == '__main__':
+    a = collect_files()
+    b = create_table(a)
+    c = fill_table(b)
+    create_readme(c)
