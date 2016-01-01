@@ -4,7 +4,7 @@ https://tinyurl.com/rDP-238-easy
 """
 # Status: Done
 
-from random import randint
+from random import choice
 
 def get_input(message = ""):
     input_string = input("%s>" % message)
@@ -12,32 +12,24 @@ def get_input(message = ""):
         return input_string
     else:
         error_message = "Input must contain only letters 'c' and 'v'\n"
-        get_input(error_message)
+        return get_input(error_message)
 
 def check_input(input_string):
     for character in input_string:
-        if character not in ('c', 'v'):
+        if character not in ('c', 'C', 'v', 'V'):
             return False
     return True
                 
 def make_word(input_string):
     new_word = []
-    
-    vowels = 'aeiouy'
-    consonants = 'bcdfghjklmnpqrstvwxz'
-    
-    len_vow = len(vowels)
-    len_con = len(consonants)
-    
-    input_string.lower()
+    alphabet = {'v' :'aeiouy', 'c' : 'bcdfghjklmnpqrstvwxz'}
+    alphabet['V'] = alphabet['v'].upper()
+    alphabet['C'] = alphabet['c'].upper()
     
     for character in input_string:
-        if character == 'c':
-            new_word.append(consonants[randint(0, len_con - 1)])
-        elif character == 'v':
-            new_word.append(vowels[randint(0, len_vow - 1)])
+        new_word.append(choice(alphabet[character]))
     new_word = ''.join(new_word)
     
     return new_word
-    
-print(make_word(get_input()))
+if __name__ == '__main__':    
+    print(make_word(get_input()))
