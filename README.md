@@ -3,9 +3,16 @@ Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) cha
 
 Number| Easy | Intermediate | Hard
 --- | --- | --- | ---
+247 | [unfinished](https://tinyurl.com/dp-247-easy "Secret Santa") | --- | ---
+246 | --- | --- | ---
+245 | --- | --- | ---
+244 | --- | --- | ---
+243 | --- | --- | ---
+242 | --- | --- | ---
+241 | --- | --- | ---
 240 | [done](https://tinyurl.com/dp-240-easy "Typoglycemia") | --- | ---
 239 | [done](https://tinyurl.com/dp-239-easy "A Game of Threes") | --- | ---
-238 | --- | --- | ---
+238 | [done](https://tinyurl.com/rDP-238-easy "Consonants and Vowels") | --- | ---
 237 | --- | --- | ---
 236 | --- | --- | ---
 235 | --- | --- | ---
