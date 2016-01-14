@@ -3,6 +3,8 @@ Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) cha
 
 Number| Easy | Intermediate | Hard
 --- | --- | --- | ---
+249 | [done](https://tinyurl.com/dp-249-easy "Playing the Stock Market") | --- | ---
+248 | [unfinished](https://tinyurl.com/dp-248-easy "Draw Me Like One Of Your Bitmaps") | --- | ---
 247 | [unfinished](https://tinyurl.com/dp-247-easy "Secret Santa") | --- | ---
 246 | --- | --- | ---
 245 | --- | --- | ---
