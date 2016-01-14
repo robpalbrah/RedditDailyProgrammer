@@ -30,20 +30,25 @@ def make_bitmap(num_of_cols, num_of_rows):
 
     
 def draw_point (bitmap, row, col, color):
-    print("Point: row %d, col %d, color %s" % (row, col, color)) 
     bitmap[(row, col)] = color
 
     
 def draw_line(bitmap, color, row_st, col_st, row_fin, col_fin):
-    #PROBLEM: function doesn't work
+    
     if row_st == row_fin:
+    
+        if col_st > col_fin:
+            col_st, col_fin = col_fin, col_st
+        
         for col in range(col_st, col_fin + 1):
             draw_point(bitmap, row_st, col, color)
+    
     else: 
         line_length_sq = ((row_st - row_fin) ** 2 + 
                           (col_st - col_fin) ** 2)
+        print("line_length_sq: %s" % line_length_sq) 
                           
-        for col in range(col_st, col_fin + 1):
+        for col in range(0, abs(col_st - col_fin) + 1):
             col = col + 0.5
             row = math.sqrt(line_length_sq - (col ** 2)) - 0.5
             row = math.ceil(row)
@@ -52,6 +57,12 @@ def draw_line(bitmap, color, row_st, col_st, row_fin, col_fin):
 
             
 def draw_rect(bitmap, color, row_st, col_st, row_fin, col_fin):
+
+    if row_st > row_fin:
+        row_st, row_fin = row_fin, row_st
+        
+    if col_st > col_fin:
+        col_st, col_fin = col_fin, col_st
 
     for row in range(row_st, row_fin + 1):
         for col in range(col_st, col_fin + 1):
@@ -80,7 +91,6 @@ def handle_input(bitmap, input_string):
         col_st = int(commands[5])
         row_fin = int(commands[6])
         col_fin = int(commands[7])
-        #PROBLEM: make draw_rect work regardless of input order
         if "line" in commands:
             draw_line(bitmap, color, row_st, col_st, row_fin, col_fin)
         elif "rect" in commands:
