@@ -4,6 +4,7 @@ https://tinyurl.com/dp-249-easy
 """
 #Status: Done
 
+# BONUS:
 # It would be interesting to make a script that calculates 
 # maximum possible daily profit and see the trading 
 # behaviour that will result from it. 

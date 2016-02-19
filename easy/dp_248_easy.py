@@ -30,6 +30,7 @@ def make_bitmap(num_of_cols, num_of_rows):
 
     
 def draw_point (bitmap, row, col, color):
+    print("point")
     bitmap[(row, col)] = color
 
     
@@ -52,7 +53,6 @@ def draw_line(bitmap, color, row_st, col_st, row_fin, col_fin):
             col = col + 0.5
             row = math.sqrt(line_length_sq - (col ** 2)) - 0.5
             row = math.ceil(row)
-            
             draw_point(bitmap, row, col, color)
 
             
@@ -91,6 +91,7 @@ def handle_input(bitmap, input_string):
         col_st = int(commands[5])
         row_fin = int(commands[6])
         col_fin = int(commands[7])
+
         if "line" in commands:
             draw_line(bitmap, color, row_st, col_st, row_fin, col_fin)
         elif "rect" in commands:
