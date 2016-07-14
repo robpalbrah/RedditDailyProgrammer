@@ -3,6 +3,26 @@ Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) cha
 
 Number| Easy | Intermediate | Hard
 --- | --- | --- | ---
+274 | [done](https://tinyurl.com/dp-274-easy "Gold and Treasure: The Beale Cipher") | --- | ---
+273 | [done](https://tinyurl.com/dp-273-easy "Getting a degree") | --- | ---
+272 | [done](https://tinyurl.com/rDP-272-easy "What's in the bag?") | --- | ---
+271 | --- | --- | ---
+270 | --- | --- | ---
+269 | --- | --- | ---
+268 | --- | --- | ---
+267 | --- | --- | ---
+266 | --- | --- | ---
+265 | --- | --- | ---
+264 | --- | --- | ---
+263 | --- | --- | ---
+262 | --- | --- | ---
+261 | --- | --- | ---
+260 | --- | --- | ---
+259 | --- | --- | ---
+258 | --- | --- | ---
+257 | [done](https://tinyurl.com/dp-257-easy "In what year were most presidents alive?") | --- | ---
+256 | --- | --- | ---
+255 | [done](https://tinyurl.com/dp-255-easy "Playing with light switches") | --- | ---
 254 | [done](https://tinyurl.com/dp-254-easy "Atbash Cipher") | --- | ---
 253 | --- | --- | ---
 252 | --- | --- | ---
