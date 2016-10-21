@@ -106,6 +106,20 @@ def diff_digits(input_number, max_digits=4):
         return True
 
 def kaprekar(input_number, iterations=0, prev_number=None, max_digits=4):
+    """Finds a Kaprekars fixed point in a number with max_digits or less.
+
+    Args:
+        input_number (int): input number  
+        iterations (int): number of previous iteration of the Kaprekars cycle.
+            Service argument. Defaults to 0.
+        prev_number (int): previous number in the Kaprekars cycle. Service argument.
+            Defaults to None.
+        max_digits (int): input_number will be processed as a number
+            with max_digits number of digits. Defaults to 4.
+    Returns:
+        tuple (imput_number (int), iterations (int)):  
+    """
+    # infinite loop on cycles 
     if input_number == prev_number:
         return (input_number, iterations)
 
@@ -155,7 +169,9 @@ if __name__ == "__main__":
             self.assertTrue(diff_digits(1234))
             self.assertTrue(diff_digits(6, max_digits=3)) # processed as 006
             self.assertFalse(diff_digits(1111))
-            self.assertTrue(diff_digits(0, max_digits=5)) # processed as 00000
+            self.assertFalse(diff_digits(0, max_digits=3)) # processed as 000
             
-            
+        def test_kaprekar(self):
+            self.assertEqual(kaprekar(6589)[1], 2) 
+        
     unittest.main()
