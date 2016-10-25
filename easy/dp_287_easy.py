@@ -1,14 +1,7 @@
-def largest_digit(number, max_digits=4):
-    num_of_digits = len(str(number))
-    if num_of_digits > max_digits:
-        print("Input number must have %d or less digits." % (max_digits))
-        return None
-
-    digits = list(map(int, str(number)))
-    while num_of_digits < max_digits:
-        digits.insert(0, 0)
-        num_of_digits = len(digits)
-    return max(digits)
+"""
+[2016-10-10] Challenge #287 [Easy] Kaprekar's Routine
+https://tinyurl.com/dp-287-easy
+"""
 
 def num_of_digits_max(input_number, max_digits=4):
     """Takes a number and returns a string with number of digits equal
@@ -88,7 +81,7 @@ def asc_digits(input_number, max_digits=4):
                           max_digits=max_digits)
 
 
-def kaprekar(input_number, iterations=0, max_digits=4):
+def kaprekar(input_number, iterations=0, max_digits=4, results_list=[]):
     """Finds a Kaprekars fixed point in a number with max_digits or less.
 
     Args:
@@ -97,16 +90,27 @@ def kaprekar(input_number, iterations=0, max_digits=4):
             Service argument. Defaults to 0.
         max_digits (int): input_number will be processed as a number
             with max_digits number of digits. Defaults to 4.
+        results_list (list): list of all previous results of kaprekar function.
+            Used to detect cycles.
     Returns:
-        tuple (imput_number (int), iterations (int)):
+        tuple (fixed_point (int), iterations (int)): two-tuple returned if
+            there is a fixed point of Kaprekars function.
+        tuple (cycle_start (int), iterations (int), cycle_list (list):
+            returned if there is a cycle
     """
-    # infinite loop on cycles
     subt_result = (desc_digits(input_number, max_digits=max_digits) -
                       asc_digits(input_number, max_digits=max_digits))
     if subt_result == input_number:
         return (subt_result, iterations)
+    elif subt_result in results_list:
+        cycle_list = results_list[results_list.index(subt_result):]
+        return (subt_result, iterations, cycle_list)
     else:
-        return kaprekar(subt_result, iterations=iterations+1, max_digits=max_digits)
+        results_list.append(subt_result)
+        return kaprekar(subt_result,
+                        iterations=iterations+1,
+                        max_digits=max_digits,
+                        results_list=results_list)
 
 
 if __name__ == "__main__":
