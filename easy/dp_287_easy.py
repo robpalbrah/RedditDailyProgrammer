@@ -4,9 +4,9 @@ https://tinyurl.com/dp-287-easy
 """
 
 def num_of_digits_max(input_number, max_digits=4):
-    """Takes a number and returns a string with number of digits equal
-    to max_digits argument. Adds zeroes in front of the number of
-    number of digits less than max_digits.
+    """Returns a string with number of digits equal to max_digits
+    argument. Inserts zeroes at the front of the string if number
+    of digits less than max_digits.
 
     Args:
         input_number (int): takes any positive integer number.
@@ -48,7 +48,7 @@ def ordered_digits(input_number, max_digits=4, descending=False):
     Returns:
         number (int): an integer with ordered digits
     """
-    adjusted_number = num_of_digits_max(input_number, max_digits=max_digits)
+    adjusted_number = num_of_digits_max(input_number, max_digits)
 
     digits = sorted(adjusted_number, reverse=descending)
     number = int(''.join(digits))
@@ -64,8 +64,7 @@ def desc_digits(input_number, max_digits=4):
     Returns:
         number (int): an integer with ordered digits
     """
-    return ordered_digits(input_number, descending=True,
-                          max_digits=max_digits)
+    return ordered_digits(input_number, max_digits, descending=True)
 
 def asc_digits(input_number, max_digits=4):
     """Returns an integer with  its' digits in a descending order.
@@ -77,11 +76,10 @@ def asc_digits(input_number, max_digits=4):
     Returns:
         number (int): an integer with ordered digits
     """
-    return ordered_digits(input_number, descending=False,
-                          max_digits=max_digits)
+    return ordered_digits(input_number, max_digits, descending=False)
 
 
-def kaprekar(input_number, iterations=0, max_digits=4, results_list=[]):
+def kaprekar(input_number, iterations=0, max_digits=4, results_list=None):
     """Finds a Kaprekars fixed point in a number with max_digits or less.
 
     Args:
@@ -96,10 +94,12 @@ def kaprekar(input_number, iterations=0, max_digits=4, results_list=[]):
         tuple (fixed_point (int), iterations (int)): two-tuple returned if
             there is a fixed point of Kaprekars function.
         tuple (cycle_start (int), iterations (int), cycle_list (list):
-            returned if there is a cycle
+            three-tuple returned if there is a cycle
     """
-    subt_result = (desc_digits(input_number, max_digits=max_digits) -
-                      asc_digits(input_number, max_digits=max_digits))
+    if results_list is None:
+        results_list = []
+    subt_result = (desc_digits(input_number, max_digits) -
+                      asc_digits(input_number, max_digits))
     if subt_result == input_number:
         return (subt_result, iterations)
     elif subt_result in results_list:
@@ -107,10 +107,7 @@ def kaprekar(input_number, iterations=0, max_digits=4, results_list=[]):
         return (subt_result, iterations, cycle_list)
     else:
         results_list.append(subt_result)
-        return kaprekar(subt_result,
-                        iterations=iterations+1,
-                        max_digits=max_digits,
-                        results_list=results_list)
+        return kaprekar(subt_result, iterations+1, max_digits, results_list=results_list)
 
 
 if __name__ == "__main__":
@@ -144,8 +141,8 @@ if __name__ == "__main__":
                 asc_digits(12345, max_digits=4)
 
         def test_kaprekar(self):
-            self.assertEqual(kaprekar(6589)[1], 2)
-            self.assertEqual(kaprekar(5455)[1], 5)
-            self.assertEqual(kaprekar(6174)[1], 0)
+            self.assertEqual(kaprekar(6589), (6174,2))
+            self.assertEqual(kaprekar(5455), (6174,5))
+            self.assertEqual(kaprekar(6174), (6174,0))
 
     unittest.main()
