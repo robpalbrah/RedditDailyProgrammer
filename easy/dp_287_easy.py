@@ -2,6 +2,7 @@
 [2016-10-10] Challenge #287 [Easy] Kaprekar's Routine
 https://tinyurl.com/dp-287-easy
 """
+# Status: Done
 
 # Additional challenge: create a table similar to the table
 # in Wiki https://en.wikipedia.org/wiki/6174_(number)
