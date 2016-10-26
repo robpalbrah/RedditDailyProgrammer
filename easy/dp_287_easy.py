@@ -3,6 +3,10 @@
 https://tinyurl.com/dp-287-easy
 """
 
+# Additional challenge: create a table similar to the table
+# in Wiki https://en.wikipedia.org/wiki/6174_(number)
+# Digits of the given number | Cycles | Cycles length | Number of cycles 
+
 def num_of_digits_max(input_number, max_digits=4):
     """Returns a string with number of digits equal to max_digits
     argument. Inserts zeroes at the front of the string if number
@@ -107,7 +111,7 @@ def kaprekar(input_number, iterations=0, max_digits=4, results_list=None):
         return (subt_result, iterations, cycle_list)
     else:
         results_list.append(subt_result)
-        return kaprekar(subt_result, iterations+1, max_digits, results_list=results_list)
+        return kaprekar(subt_result, iterations+1, max_digits, results_list)
 
 
 if __name__ == "__main__":
