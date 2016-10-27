@@ -3,6 +3,21 @@ Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) cha
 
 Number| Easy | Intermediate | Hard
 --- | --- | --- | ---
+289 | [done](https://tinyurl.com/dp-289-easy "It's super effective!") | --- | ---
+288 | --- | --- | ---
+287 | [done](https://tinyurl.com/dp-287-easy "Kaprekar's Routine") | --- | ---
+286 | --- | --- | ---
+285 | --- | --- | ---
+284 | --- | --- | ---
+283 | --- | --- | ---
+282 | --- | --- | ---
+281 | --- | --- | ---
+280 | --- | --- | ---
+279 | --- | --- | ---
+278 | --- | --- | ---
+277 | --- | --- | ---
+276 | --- | --- | ---
+275 | --- | --- | ---
 274 | [done](https://tinyurl.com/dp-274-easy "Gold and Treasure: The Beale Cipher") | --- | ---
 273 | [done](https://tinyurl.com/dp-273-easy "Getting a degree") | --- | ---
 272 | [done](https://tinyurl.com/rDP-272-easy "What's in the bag?") | --- | ---
