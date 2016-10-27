@@ -2,6 +2,7 @@
 [2016-10-24] Challenge #289 [Easy] It's super effective!
 https://tinyurl.com/dp-289-easy
 """
+# Status: Done
 
 INPUT_FILE = 'dp_289_easy_input.txt'
 
