@@ -4,18 +4,21 @@ https://tinyurl.com/dp-286-easy
 """
 # Status: Done
 
-def reverse_factorial(number):
-    """Takes positive integer and returns its reverse factorial.
+def reverse_factorial(input_number):
+    """Takes non-negative integer and returns its reverse factorial.
     Args:
-        number(int):
+        number(int): input number
     Returns:
-
+        'i!' (str): reverse factorial if in exists, else returns 'NONE'.
+            Special case for input_number = 1: returns '0!, 1!'
     """
-    number = float(number)
-    if number <= 0:
+    if input_number <= 0:
         return 'NONE'
-    
-    i = 1
+    elif input_number == 1:
+        return '0!, 1!'
+
+    number = float(input_number)
+    i = 2 # starts from 2 because '1' was handled above
     while number.is_integer():
         number = number / i
         if number == 1:
@@ -31,7 +34,7 @@ if __name__ == '__main__':
     class TestFunctions(unittest.TestCase):
         def test_reverse_factorial(self):
             self.assertEqual(reverse_factorial(0), 'NONE')
-            self.assertEqual(reverse_factorial(1), '1!')
+            self.assertEqual(reverse_factorial(1), '0!, 1!')
             self.assertEqual(reverse_factorial(2), '2!')
 
             self.assertEqual(reverse_factorial(120), '5!')
