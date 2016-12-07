@@ -3,10 +3,15 @@ Repository for [r/DailyProgrammer](https://www.reddit.com/r/dailyprogrammer) cha
 
 Number| Easy | Intermediate | Hard
 --- | --- | --- | ---
+294 | [unfinished](https://tinyurl.com/dp-294-easy "Rack management 1") | --- | ---
+293 | [done](https://tinyurl.com/dp-293-easy "Defusing the bomb") | --- | ---
+292 | --- | --- | ---
+291 | --- | --- | ---
+290 | [unfinished](https://tinyurl.com/dp-290-easy "Kaprekar Numbers") | --- | ---
 289 | [done](https://tinyurl.com/dp-289-easy "It's super effective!") | --- | ---
 288 | --- | --- | ---
 287 | [done](https://tinyurl.com/dp-287-easy "Kaprekar's Routine") | --- | ---
-286 | --- | --- | ---
+286 | [done](https://tinyurl.com/dp-286-easy "Reverse Factorial") | --- | ---
 285 | --- | --- | ---
 284 | --- | --- | ---
 283 | --- | --- | ---

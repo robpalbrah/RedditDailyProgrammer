@@ -101,7 +101,7 @@ def fill_table(challenges_table):
     If no challenge file for this combination of number/difficulty
     string '---' will be put on it's place. Every existent item will
     be filled in fallowing format: [status](url "description")"""
-    difficulty_levels = ('easy', 'intermediate', 'hard')
+    difficulty_levels = ('easy', 'int', 'hard')
 
     for number in challenges_table:
         for filename in challenges_table[number]:
